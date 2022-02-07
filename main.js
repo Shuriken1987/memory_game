@@ -1,8 +1,6 @@
 let twoFliped = [];
-// let icons = ['<i class="fab fa-js-square"></i>', '<i class="fab fa-php"></i>', '<i class="fab fa-js-square"></i>', '<i class="fab fa-php"></i>'];
  let icons = ['<i class="fab fa-js-square"></i>', '<i class="fab fa-php"></i>', '<i class="fab fa-laravel"></i>', '<i class="fab fa-react"></i>', '<i class="fab fa-python"></i>', '<i class="fab fa-angular"></i>', '<i class="fab fa-node"></i>', '<i class="fab fa-vuejs"></i>', '<i class="fab fa-bootstrap"></i>', '<i class="fab fa-css3"></i>', '<i class="fab fa-html5"></i>', '<i class="fab fa-sass"></i>', '<i class="fab fa-java"></i>', '<i class="fab fa-less"></i>', '<i class="fab fa-wordpress"></i>', '<i class="fab fa-symfony"></i>', '<i class="fas fa-atom"></i>', '<i class="fab fa-wix"></i>', '<i class="fab fa-js-square"></i>', '<i class="fab fa-php"></i>', '<i class="fab fa-laravel"></i>', '<i class="fab fa-react"></i>', '<i class="fab fa-python"></i>', '<i class="fab fa-angular"></i>', '<i class="fab fa-node"></i>', '<i class="fab fa-vuejs"></i>', '<i class="fab fa-bootstrap"></i>', '<i class="fab fa-css3"></i>', '<i class="fab fa-html5"></i>', '<i class="fab fa-sass"></i>', '<i class="fab fa-java"></i>', '<i class="fab fa-less"></i>', '<i class="fab fa-wordpress"></i>', '<i class="fab fa-symfony"></i>', '<i class="fas fa-atom"></i>', '<i class="fab fa-wix"></i>'];
 let container = document.querySelector('.container');
-// let level = 0;
 render();
 let cards = document.querySelectorAll('.card');
 let counter = 0;
@@ -14,8 +12,6 @@ addClicks();
 
 function flipCards() {
     this.removeEventListener('click', flipCards)
-    // console.log(this.children);
-    // let front = this.querySelector('.front');                          drugi nacin css za selektovanje
     twoFliped.push(this)
     counter++;
     let back = this.children[0];
@@ -30,7 +26,6 @@ function flipCards() {
 
 function checkCards() {
     removeClicks();
-    // console.log(twoFliped);
     let front1 = twoFliped[0].children[1];
     let back1 = twoFliped[0].children[0];
     let front2 = twoFliped[1].children[1];
@@ -57,11 +52,9 @@ function checkCards() {
 }
 
 function render() {
-    // level++;
-    // console.log(level);
     let all = '';
-    for (let i = 0; i < 36; i++) {                             // zamenio sa icons.length na 36 da bih se vrtelo 36x
-        let randomNumber = Math.floor(Math.random() * icons.length);  // zamenio sa 36 na icons.length 
+    for (let i = 0; i < 36; i++) {                         
+        let randomNumber = Math.floor(Math.random() * icons.length); 
         all += `<div class="card">
                  <div class="backcard">
                  ${icons[randomNumber]}
@@ -71,8 +64,6 @@ function render() {
                 </div>`;
         icons.splice(randomNumber, 1)
     }
-    // container.style.width = 100 * (level * 4 / 2) + 'px';
-    // container.style.height = 100 * (level * 4 / 2) + 'px';
     container.innerHTML = all;
 }
 
@@ -97,4 +88,4 @@ function removeClicks() {
 //         alert('Game over');
 //         removeClicks();
 //     }
-// },100);
+// },1000);
